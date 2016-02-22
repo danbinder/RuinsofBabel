@@ -72,6 +72,7 @@ public class Brawler : MonoBehaviour {
         if (!this.myAnimator.GetCurrentAnimatorStateInfo(0).IsTag("Attack")) //layer 0 (only layer so far)
         {   //move player only if not attacking
             myRigidbody.velocity = new Vector2(horizontal * mvmtSpeed * Time.deltaTime, myRigidbody.velocity.y); //x val of -1, y val of 0;
+           
         }
         if (isGrounded && jump) //if we press jump button & are on ground -- make player jump
         {
