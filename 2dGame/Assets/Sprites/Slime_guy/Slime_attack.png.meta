@@ -1,0 +1,244 @@
+fileFormatVersion: 2
+guid: f8b559faf5dd5054289d949d8ac75562
+timeCreated: 1458752580
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Slime_attack_0
+    21300002: Slime_attack_1
+    21300004: Slime_attack_2
+    21300006: Slime_attack_3
+    21300008: Slime_attack_4
+    21300010: Slime_attack_5
+    21300012: Slime_attack_6
+    21300014: Slime_attack_7
+    21300016: Slime_attack_8
+    21300018: Slime_attack_9
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Slime_attack_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 2
+        width: 55
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.5, y: 19}
+        - {x: -27.5, y: 0}
+        - {x: -27.5, y: -19}
+        - {x: 27.5, y: -19}
+        - {x: 27.5, y: -2}
+        - {x: 11.5, y: 19}
+    - name: Slime_attack_1
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 2
+        width: 55
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 16.5, y: 19}
+        - {x: -15.5, y: 19}
+        - {x: -27.5, y: 15}
+        - {x: -27.5, y: -19}
+        - {x: 27.5, y: -19}
+        - {x: 27.5, y: -2}
+        - {x: 23.5, y: 8}
+    - name: Slime_attack_2
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 2
+        width: 55
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17.5, y: 19}
+        - {x: -27.5, y: 4}
+        - {x: -27.5, y: -19}
+        - {x: 27.5, y: -19}
+        - {x: 27.5, y: 14}
+        - {x: 19.5, y: 19}
+    - name: Slime_attack_3
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 2
+        width: 58
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 19}
+        - {x: -29, y: 10}
+        - {x: -29, y: -19}
+        - {x: 29, y: -19}
+        - {x: 29, y: 15}
+        - {x: 13, y: 19}
+    - name: Slime_attack_4
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 2
+        width: 65
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21.5, y: 19}
+        - {x: -32.5, y: 1}
+        - {x: -32.5, y: -19}
+        - {x: 29.5, y: -19}
+        - {x: 32.5, y: -13}
+        - {x: 32.5, y: 17}
+        - {x: 17.5, y: 19}
+    - name: Slime_attack_5
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 2
+        width: 72
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14, y: 14}
+        - {x: 3, y: 19}
+        - {x: -23, y: 19}
+        - {x: -36, y: 10}
+        - {x: -36, y: -19}
+        - {x: 25, y: -19}
+        - {x: 34, y: -3}
+        - {x: 36, y: 3}
+        - {x: 36, y: 16}
+    - name: Slime_attack_6
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 2
+        width: 79
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -30.5, y: 19}
+        - {x: -39.5, y: 5}
+        - {x: -39.5, y: -19}
+        - {x: 21.5, y: -19}
+        - {x: 39.5, y: 3}
+        - {x: 39.5, y: 18}
+        - {x: 32.5, y: 19}
+    - name: Slime_attack_7
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 2
+        width: 88
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -31, y: 19}
+        - {x: -44, y: 10}
+        - {x: -44, y: -19}
+        - {x: 21, y: -19}
+        - {x: 33, y: -6}
+        - {x: 44, y: 9}
+        - {x: 44, y: 19}
+    - name: Slime_attack_8
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 2
+        width: 97
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -38.5, y: 19}
+        - {x: -48.5, y: 4}
+        - {x: -48.5, y: -19}
+        - {x: 19.5, y: -19}
+        - {x: 48.5, y: 11}
+        - {x: 48.5, y: 19}
+    - name: Slime_attack_9
+      rect:
+        serializedVersion: 2
+        x: 1156
+        y: 2
+        width: 102
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -42, y: 19}
+        - {x: -51, y: 11}
+        - {x: -51, y: -19}
+        - {x: 10, y: -19}
+        - {x: 51, y: 7}
+        - {x: 51, y: 19}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

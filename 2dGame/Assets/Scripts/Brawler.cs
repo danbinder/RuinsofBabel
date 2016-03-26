@@ -3,14 +3,24 @@ using System.Collections;
 
 public class Brawler : MonoBehaviour {
 
-    private Rigidbody2D myRigidbody;
-	
-	private Animator myAnimator;
+    private static Brawler instance;
+
+    public static Brawler Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = GameObject.FindObjectOfType<Brawler>();
+            }
+            return instance;
+        }
+    }
+
+    private Animator myAnimator;
 
     [SerializeField] //ability to access in unity window
     private float mvmtSpeed;
-
-    private bool attack;
 
     private bool facingRight;
 
@@ -23,22 +33,24 @@ public class Brawler : MonoBehaviour {
     [SerializeField]
     private LayerMask whatIsGround;
 
-    private bool isGrounded;
-
-    private bool jump;
-
     [SerializeField]
     private bool airControl;
 
     [SerializeField]
     private float jumpForce; //power to the jump
 
+    public Rigidbody2D MyRigidbody { get; set; }
+
+    public bool Attack { get; set; }
+    public bool Jump { get; set; }
+    public bool OnGround { get; set; }
 
 
-	// Use this for initialization
-	void Start () {
+
+    // Use this for initialization
+    void Start () {
         facingRight = true;
-        myRigidbody = GetComponent<Rigidbody2D>();
+        MyRigidbody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
 
     }
@@ -46,7 +58,7 @@ public class Brawler : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         float horizontal = Input.GetAxis("Horizontal");
-        isGrounded = IsGrounded();
+        OnGround = IsGrounded();
 
         HandleInput();
 
@@ -54,54 +66,39 @@ public class Brawler : MonoBehaviour {
 
         Flip(horizontal);
 
-        HandleAttacks();
-
         HandleLayers();
 
-
-
-        ResetValues();
 	}
 
     private void HandleMovement(float horizontal)
     {   
-        if (myRigidbody.velocity.y < 0) //begin falling
+        if (MyRigidbody.velocity.y < 0)
         {
-            myAnimator.SetBool("landing", true);
+            myAnimator.SetBool("land", true);
         }
-        if (!this.myAnimator.GetCurrentAnimatorStateInfo(0).IsTag("Attack")) //layer 0 (only layer so far)
-        {   //move player only if not attacking
-            myRigidbody.velocity = new Vector2(horizontal * mvmtSpeed * Time.deltaTime, myRigidbody.velocity.y); //x val of -1, y val of 0;
-           
-        }
-        if (isGrounded && jump) //if we press jump button & are on ground -- make player jump
+        if (!Attack && (OnGround || airControl))
         {
-            isGrounded = false;
-            myRigidbody.AddForce(new Vector2(0, jumpForce));
-            myAnimator.SetTrigger("jump");
+            MyRigidbody.velocity = new Vector2(horizontal * mvmtSpeed, MyRigidbody.velocity.y);
+        }
+        if (Jump && MyRigidbody.velocity.y == 0)
+        {
+            MyRigidbody.AddForce(new Vector2(0, jumpForce));
         }
 
         myAnimator.SetFloat("speed", Mathf.Abs(horizontal));
     }
 
-    private void HandleAttacks()
-    {
-        if (attack && isGrounded && !this.myAnimator.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
-        {
-            myAnimator.SetTrigger("attack");
-            myRigidbody.velocity = Vector2.zero;
-        }
-    }
+
 
     private void HandleInput()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse1))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            jump = true;
+            myAnimator.SetTrigger("jump");
         }
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            attack = true;
+            myAnimator.SetTrigger("attack");
         }
     }
 
@@ -118,16 +115,10 @@ public class Brawler : MonoBehaviour {
             transform.localScale = playerScale;
         }
     }
-
-    private void ResetValues()
-    {
-        attack = false;
-        jump = false;
-    }
-
+    
     private bool IsGrounded()
     {
-        if (myRigidbody.velocity.y <= 0) //falling or stopped moving down
+        if (MyRigidbody.velocity.y <= 0) //falling or stopped moving down
         {
             foreach (Transform point in groundPoints)
             {
@@ -137,8 +128,6 @@ public class Brawler : MonoBehaviour {
                 {
                     if (colliders[i].gameObject != gameObject) //if grounded
                     {
-                        myAnimator.ResetTrigger("jump");
-                        myAnimator.SetBool("landing", false);
                         return true;
                     }
                 }
@@ -149,10 +138,9 @@ public class Brawler : MonoBehaviour {
 
     private void HandleLayers()
     {
-        if (!isGrounded)
+        if (!OnGround)
         {
-            myAnimator.SetLayerWeight(1, 1); //if in air, give airLayer Priority
-            Debug.Log("airLayer");
+            myAnimator.SetLayerWeight(1, 1); //if in air, give airLayer animations Priority
         }
         else
         {
